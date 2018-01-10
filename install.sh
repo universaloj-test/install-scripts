@@ -90,7 +90,9 @@ cp ~/install-scripts/install/new_problem.sh \
 	~/install-scripts/install/up \
 	/root/
 cd /root && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
+cp ~/install-scripts/install/up /root/
 chmod +x /root/up
+cd ~/ && rm -rf install-scripts
 echo "Configure UOJ Finished"
 ################## Configure UOJ Finished ##################
 
