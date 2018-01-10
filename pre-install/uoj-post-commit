@@ -1,0 +1,2 @@
+#!/bin/sh
+svn update /var/svn/uoj/cur/uoj --username root --password root
