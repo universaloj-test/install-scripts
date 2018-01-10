@@ -89,9 +89,8 @@ cp ~/install-scripts/install/new_problem.sh \
 	~/install-scripts/install/install \
 	~/install-scripts/install/up \
 	/root/
-cd /root && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
-cp ~/install-scripts/install/up /root/
-chmod +x /root/up
+cd ~ && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
+cd ~ &&wget https://raw.githubusercontent.com/universaloj-test/install-scripts/master/install/up && chmod +x /root/up
 cd ~/ && rm -rf install-scripts
 echo "Configure UOJ Finished"
 ################## Configure UOJ Finished ##################
