@@ -72,8 +72,8 @@ echo "Preinstall Finished"
 ################## Download UOJ Source Code Start ##################
 echo "Download UOJ Source Code Start"
 cd ~
-git clone https://github.com/universaloj-test/uoj-web.git --depth=1 && cd uoj-web && rm -rf .git
-git clone https://github.com/universaloj-test/uoj-judge.git --depth=1 && cd uoj-judge && rm -rf .git
+git clone https://github.com/universaloj-test/uoj-web.git --depth=1 && cd uoj-web && rm -rf .git && cd ..
+git clone https://github.com/universaloj-test/uoj-judge.git --depth=1 && cd uoj-judge && rm -rf .git && cd ..
 echo "Download UOJ Source Code Finished"
 ################## Download UOJ Source Code Finished ##################
 ################## Configure UOJ Start ##################
