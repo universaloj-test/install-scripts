@@ -16,10 +16,7 @@ cd uoj
 svn add 1
 svn ci -m "first commit" __svn_cert__
 cd ..
-rm uoj -r
-
 rm /var/www/uoj -r && ln -s /var/svn/uoj/cur/uoj/1 /var/www/uoj
-
 while [ ! -d "/var/www/uoj/app" ]
 do
 	sleep 1
@@ -36,7 +33,6 @@ cd judge_client
 svn add 1
 svn ci -m "first commit" __svn_cert__
 cd ..
-rm judge_client -r
 
 chown local_main_judger /home/local_main_judger/jdk-7u76-linux-x64.tar.gz /home/local_main_judger/jdk-8u31-linux-x64.tar.gz
 
