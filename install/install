@@ -11,7 +11,7 @@ service apache2 start
 cd /root/
 
 svn co svn://127.0.0.1/uoj __svn_cert__
-mv uoj_1 uoj/1
+mv uoj_1 /root/uoj/1
 cd uoj
 svn add 1
 svn ci -m "first commit" __svn_cert__
