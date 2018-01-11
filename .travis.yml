@@ -1,0 +1,6 @@
+language: php
+sudo: enabled
+git:
+  depth: 1
+  submodules: false
+install: ./install.sh

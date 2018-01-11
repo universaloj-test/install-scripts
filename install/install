@@ -8,7 +8,7 @@ svnserve -d -r /var/svn
 service mysql start
 service apache2 start
 
-cd /root
+cd /root/
 
 svn co svn://127.0.0.1/uoj __svn_cert__
 mv uoj_1 uoj/1
@@ -25,9 +25,9 @@ do
 	sleep 1
 done
 
-mv uoj_config.php /var/www/uoj/app/.config.php
+mv ~/install-scripts/install/uoj_config.php /var/www/uoj/app/.config.php
 
-mysql -u root --password=root <app_uoj233.sql
+mysql -uroot --password=root <app_uoj233.sql
 chown www-data /var/www/uoj/app/storage -R
 
 svn co svn://127.0.0.1/judge_client __svn_cert__
@@ -46,7 +46,7 @@ ln -s /var/svn/judge_client/cur/judge_client/1 ~/judge_client
 cd ~/judge_client
 chmod +x judge_client
 echo '#define UOJ_WORK_PATH "/home/local_main_judger/judge_client/uoj_judger"' >uoj_judger/include/uoj_work_path.h
-make
+make clean && make
 ln -s /var/uoj_data ~/judge_client/uoj_judger/data
 
 mkdir ~/judge_client/uoj_judger/run/runtime
