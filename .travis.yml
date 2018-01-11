@@ -1,6 +1,5 @@
 language: php
-sudo: enabled
-git:
-  depth: 1
-  submodules: false
-install: sudo bash install.sh
+sudo: required
+script:
+  - chmod +x ./install.sh
+  - ./install.sh
