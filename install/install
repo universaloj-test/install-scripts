@@ -24,7 +24,7 @@ done
 
 mv ~/install-scripts/install/uoj_config.php /var/www/uoj/app/.config.php
 
-mysql -uroot --password=root <app_uoj233.sql
+mysql -uroot --password=root </root/install-scripts/install/app_uoj233.sql
 chown www-data /var/www/uoj/app/storage -R
 
 svn co svn://127.0.0.1/judge_client __svn_cert__
@@ -52,7 +52,7 @@ tar -xzf jdk-7u76-linux-x64.tar.gz
 tar -xzf jdk-8u31-linux-x64.tar.gz
 EOD
 
-mv judge_client_config.json /home/local_main_judger/judge_client/.conf.json
+mv /root/install-scripts/install/judge_client_config.json /home/local_main_judger/judge_client/.conf.json
 chown local_main_judger /home/local_main_judger/judge_client/.conf.json
 chmod 600 /home/local_main_judger/judge_client/.conf.json
 
