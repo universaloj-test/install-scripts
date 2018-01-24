@@ -78,6 +78,10 @@ echo "Download UOJ Source Code Finished"
 ################## Download UOJ Source Code Finished ##################
 ################## Configure UOJ Start ##################
 echo "Configure UOJ Start"
+wget http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
+wget http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-8u162-linux-x64.tar.gz
+cp jdk-7u80-linux-x64.tar.gz /home/local_main_judger/
+cp jdk-8u162-linux-x64.tar.gz /home/local_main_judger/
 cp uoj-web /root/uoj_1 -R
 cp uoj-judge /root/judge_client_1 -R
 cd ~/install-scripts/install/ && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
