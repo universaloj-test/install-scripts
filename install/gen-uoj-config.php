@@ -88,6 +88,6 @@ translate('post-commit.sh', '/var/svn/problem/post-commit.sh', $translate_table)
 
 translate('uoj-passwd', '/var/svn/uoj/conf/passwd', $translate_table);
 translate('uoj-post-commit', '/var/svn/uoj/hooks/post-commit', $translate_table);
-file_put_contents('uoj_config.php', "<?php\nreturn ".var_export($config, true).";\n");
+// file_put_contents('uoj_config.php', "<?php\nreturn ".var_export($config, true).";\n");
 file_put_contents('judge_client_config.json', json_encode($judge_client_config, JSON_PRETTY_PRINT));
 translate('install', 'install', $translate_table);

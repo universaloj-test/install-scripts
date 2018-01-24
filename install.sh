@@ -80,7 +80,7 @@ echo "Download UOJ Source Code Finished"
 echo "Configure UOJ Start"
 cp uoj-web /root/uoj_1 -R
 cp uoj-judge /root/judge_client_1 -R
-cd ~/install-scripts/install/ && chmod +x install && ./install && rm * -rf
+cd ~/install-scripts/install/ && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
 cd ~ && wget https://raw.githubusercontent.com/universaloj-test/install-scripts/master/install/up && chmod +x /root/up
 cd ~ && rm -rf install-scripts
 echo "Configure UOJ Finished"
