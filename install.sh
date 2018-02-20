@@ -79,7 +79,7 @@ echo "Download UOJ Source Code Finished"
 ################## Configure UOJ Start ##################
 echo "Configure UOJ Start"
 wget http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
-wget http://download.oracle.com/otn/java/jdk/8u31-b13/jdk-8u31-linux-x64.tar.gz
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn/java/jdk/8u31-b13/jdk-8u31-linux-x64.tar.gz
 cp jdk-7u80-linux-x64.tar.gz /home/local_main_judger/
 cp jdk-8u31-linux-x64.tar.gz /home/local_main_judger/
 cp uoj-web /root/uoj_1 -R
