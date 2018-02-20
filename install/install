@@ -34,7 +34,7 @@ svn add 1
 svn ci -m "first commit" __svn_cert__
 cd ..
 
-chown local_main_judger /home/local_main_judger/jdk-7u80-linux-x64.tar.gz /home/local_main_judger/jdk-8u162-linux-x64.tar.gz
+chown local_main_judger /home/local_main_judger/jdk-7u80-linux-x64.tar.gz /home/local_main_judger/jdk-8u31-linux-x64.tar.gz
 
 su local_main_judger <<EOD
 svn update /var/svn/judge_client/cur/judge_client __svn_cert__
@@ -46,10 +46,10 @@ make clean && make
 ln -s /var/uoj_data ~/judge_client/uoj_judger/data
 
 mkdir ~/judge_client/uoj_judger/run/runtime
-mv ~/jdk-7u80-linux-x64.tar.gz ~/jdk-8u162-linux-x64.tar.gz ~/judge_client/uoj_judger/run/runtime
+mv ~/jdk-7u80-linux-x64.tar.gz ~/jdk-8u31-linux-x64.tar.gz ~/judge_client/uoj_judger/run/runtime
 cd ~/judge_client/uoj_judger/run/runtime
 tar -xzf jdk-7u80-linux-x64.tar.gz
-tar -xzf jdk-8u162-linux-x64.tar.gz
+tar -xzf jdk-8u31-linux-x64.tar.gz
 EOD
 
 mv /root/install-scripts/install/judge_client_config.json /home/local_main_judger/judge_client/.conf.json
