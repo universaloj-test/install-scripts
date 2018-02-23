@@ -4,6 +4,7 @@ echo "Preinstall Starts"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password root" && debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
 apt-get -qq update -y
 apt-get -qq install -y apache2 php5 mysql-server-5.6 libapache2-mod-auth-mysql php5-mysql subversion vim unzip cmake libapache2-mod-xsendfile zip fp-compiler php-pear php5-dev libv8-dev re2c libyaml-dev python python3 python-requests ntp
+usermod -d /var/lib/mysql/ mysql
 cp ~/install-scripts/pre-install/000-uoj.conf /etc/apache2/sites-available/000-uoj.conf
 a2dissite 000-default.conf && a2ensite 000-uoj.conf
 cp /var/www/html/ /var/www/uoj/ -r
@@ -78,14 +79,14 @@ echo "Download UOJ Source Code Finished"
 ################## Download UOJ Source Code Finished ##################
 ################## Configure UOJ Start ##################
 echo "Configure UOJ Start"
-wget http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
-wget https://github.com/universaloj-test/oracle-jdk-tar-ball/raw/master/jdk-8u31-linux-x64.tar.gz
+wget -q http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
+wget -q https://github.com/universaloj-test/oracle-jdk-tar-ball/raw/master/jdk-8u31-linux-x64.tar.gz
 cp jdk-7u80-linux-x64.tar.gz /home/local_main_judger/
 cp jdk-8u31-linux-x64.tar.gz /home/local_main_judger/
 cp uoj-web /root/uoj_1 -R
 cp uoj-judge /root/judge_client_1 -R
 cd ~/install-scripts/install/ && php gen-uoj-config.php && chmod +x install && ./install && rm * -rf
-cd ~ && wget https://raw.githubusercontent.com/universaloj-test/install-scripts/master/install/up && chmod +x /root/up
+cd ~ && wget -q https://raw.githubusercontent.com/universaloj-test/install-scripts/master/install/up && chmod +x /root/up
 cd ~ && rm -rf install-scripts
 echo "Configure UOJ Finished"
 ################## Configure UOJ Finished ##################
