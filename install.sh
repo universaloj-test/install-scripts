@@ -3,7 +3,7 @@
 echo "Preinstall Starts"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password root" && debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
 apt-get -qq update -y
-apt-get -qq install -y apache2 php5 mysql-server libapache2-mod-auth-mysql php5-mysql subversion vim unzip cmake libapache2-mod-xsendfile zip fp-compiler php-pear php5-dev libv8-dev re2c libyaml-dev python python3 python-requests ntp
+apt-get -qq install -y apache2 php5 mysql-server-5.6 libapache2-mod-auth-mysql php5-mysql subversion vim unzip cmake libapache2-mod-xsendfile zip fp-compiler php-pear php5-dev libv8-dev re2c libyaml-dev python python3 python-requests ntp
 cp ~/install-scripts/pre-install/000-uoj.conf /etc/apache2/sites-available/000-uoj.conf
 a2dissite 000-default.conf && a2ensite 000-uoj.conf
 cp /var/www/html/ /var/www/uoj/ -r
