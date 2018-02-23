@@ -6,18 +6,11 @@ a2dissite 000-default.conf && a2ensite 000-uoj.conf
 cd /var/www
 cp html uoj -r
 cd /var
-mkdir svn && cd svn
-svnserve -d -r /var/svn
-svnadmin create /var/svn/uoj
-cd uoj/conf
-# vim svnserve.conf
-# vim passwd
-cd ..
+mkdir svn 
+svnserve -d -r svn
+svnadmin create svn/uoj
+cd svn/uoj
 mkdir cur
-cd conf
-# vim svnserve.conf
-# vim passwd
-cd ..
 cd cur
 svn checkout svn://127.0.0.1/uoj --username root --password root
 cd ..
@@ -30,9 +23,8 @@ chmod +x post-commit
 service mysql start
 service mysql reload
 # vim /etc/apache2/apache2.conf
-service apache2 reload
+service apache2 restart
 cd /var/lib/php5
-service apache2 start
 mkdir --mode=733 uoj
 chmod +t uoj
 adduser local_main_judger
@@ -43,14 +35,10 @@ cd /var/svn/judge_client/conf
 cd ..
 mkdir cur
 cd cur
-svn checkout svn://127.0.0.1/judge_client --username root --password root
-svn checkout svn://localhost/judge_client --username root --password root
-svn checkout svn://127.0.0.1/judge_client --username root --password root
 svnserve -d -r /var/svn
 svn checkout svn://127.0.0.1/judge_client --username root --password root
 chown local_main_judger judge_client/ -R
 cd judge_client
-svnserve -d -r /var/svn
 svnserve -d -r /var/svn
 cd /var/svn/judge_client/hooks
 # vim post-commit
@@ -68,9 +56,7 @@ ln -s /var/uoj_data data
 cd /etc/apache2/sites-available
 # vim 000-uoj.conf
 pecl install v8js-0.1.3
-service apache2 reload
 a2enmod headers
-service apache2 reload
 pecl install yaml
 vim /etc/php5/apache2/php.ini
 service apache2 reload
