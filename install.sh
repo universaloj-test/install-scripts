@@ -82,7 +82,7 @@ echo "Configure UOJ Start"
 wget -q -c http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
 wget -q -c https://github.com/universaloj-test/oracle-jdk-tar-ball/archive/8u31.tar.gz
 tar -xzvf 8u31.tar.gz
-cd 8u31/
+cd oracle-jdk-tar-ball-8u31/
 tar -czvf jdk-8u31-linux-x64.tar.gz jdk1.8.0_31
 cp jdk-8u31-linux-x64.tar.gz ../
 cd ..
