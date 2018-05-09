@@ -80,13 +80,7 @@ echo "Download UOJ Source Code Finished"
 ################## Configure UOJ Start ##################
 echo "Configure UOJ Start"
 wget -q -c http://ftp.osuosl.org/pub/funtoo/distfiles/oracle-java/jdk-7u80-linux-x64.tar.gz
-wget -q -c https://github.com/universaloj-test/oracle-jdk-tar-ball/archive/8u31.tar.gz
-tar -xzvf 8u31.tar.gz
-cd oracle-jdk-tar-ball-8u31/
-tar -czvf jdk-8u31-linux-x64.tar.gz jdk1.8.0_31
-cp jdk-8u31-linux-x64.tar.gz ../
-cd ..
-rm -rf oracle-jdk-tar-ball-8u31 8u31.tar.gz
+wget -q -c https://storage.googleapis.com/my-uoj.appspot.com/jdk-8u31-linux-x64.tar.gz
 cp jdk-7u80-linux-x64.tar.gz /home/local_main_judger/
 cp jdk-8u31-linux-x64.tar.gz /home/local_main_judger/
 cp uoj-web /root/uoj_1 -R
